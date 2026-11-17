@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta name="description" content="Explore career paths that match your interests, strengths, and the work you enjoy." />
+    <title>Northstar — Career discovery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Northstar home"><span class="brand-mark">✳</span><span>northstar<span class="brand-dot">.</span></span></a>
+      <nav class="topnav" aria-label="Main navigation">
+        <button class="nav-link active" data-view="home">Discover</button>
+        <button class="nav-link" data-view="saved">Saved careers <span id="saved-count" class="saved-count">0</span></button>
+      </nav>
+      <button class="avatar-button" id="about-button" aria-label="About this project">?</button>
+    </header>
+
+    <main>
+      <section id="home-view" class="view active">
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+            <h1>Find work that<br /><em>feels like you.</em></h1>
+            <p class="hero-text">A little clarity can open a lot of doors. Tell us what you enjoy, and we’ll help you explore career paths that fit.</p>
+            <div class="hero-actions">
+              <button class="button button-dark" id="start-button">Find my direction <span>↗</span></button>
+              <span class="time-note"><span class="sparkle">✦</span> Takes about 3 minutes</span>
+            </div>
+            <div class="social-proof"><div class="avatar-stack"><span>J</span><span>M</span><span>A</span><span>+</span></div><span>Made for curious minds<br /><b>just like yours</b></span></div>
+          </div>
+          <div class="hero-art" aria-label="Illustration of a person exploring a path toward the horizon">
+            <div class="art-sun"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+            <div class="art-label label-top"><span>✦</span> Your interests matter</div>
+            <div class="hill hill-back"></div><div class="hill hill-mid"></div><div class="hill hill-front"></div>
+            <div class="path"></div><div class="person"><span class="person-head"></span><span class="person-body"></span><span class="person-leg leg-left"></span><span class="person-leg leg-right"></span><span class="person-bag"></span></div>
+            <div class="art-label label-bottom"><span>↗</span> A path of your own</div>
+            <div class="art-star star-a">✳</div><div class="art-star star-b">✦</div><div class="art-star star-c">✧</div>
+          </div>
+        </section>
+
+        <section class="steps-strip" aria-label="How it works">
+          <div class="strip-heading"><span class="eyebrow">A SIMPLE WAY FORWARD</span><h2>Curiosity to clarity<br />in three steps.</h2></div>
+          <div class="mini-step"><span class="step-number">01</span><div><b>Tell us about you</b><p>What you like, what comes naturally, and what matters.</p></div></div>
+          <div class="mini-step"><span class="step-number">02</span><div><b>Explore your matches</b><p>See thoughtful suggestions with the “why” behind each one.</p></div></div>
+          <div class="mini-step"><span class="step-number">03</span><div><b>Take a small next step</b><p>Get ideas to learn more, without pressure to decide today.</p></div></div>
+        </section>
+        <section class="note-band"><span>✳</span><p><b>There’s no single right answer.</b> Think of these ideas as places to start exploring—not a decision made for you.</p><button id="method-button">How it works ↗</button></section>
+      </section>
+
+      <section id="quiz-view" class="view quiz-view" aria-live="polite">
+        <div class="quiz-shell">
+          <button class="back-home" id="quit-quiz">← Back to overview</button>
+          <div class="quiz-topline"><span id="question-count">QUESTION 01 / 05</span><span id="progress-label">20% complete</span></div>
+          <div class="progress-track"><div id="progress-bar"></div></div>
+          <div class="question-wrap">
+            <div id="question-kicker" class="eyebrow">FIRST, THE FUN PART</div>
+            <h2 id="question-title">What kinds of things pull you in?</h2>
+            <p id="question-help">Pick up to three. Go with what feels interesting, not what sounds impressive.</p>
+            <div id="answer-options" class="answer-options"></div>
+          </div>
+          <div class="quiz-footer"><span id="selection-hint">Choose at least one to continue</span><div class="quiz-controls"><button class="button button-quiet" id="prev-button" disabled>Back</button><button class="button button-dark" id="next-button" disabled>Continue <span>→</span></button></div></div>
+        </div>
+      </section>
+
+      <section id="results-view" class="view results-view">
+        <div class="results-container">
+          <div class="result-heading"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR CAREER EXPLORATION</div><h1>A few paths worth<br /><em>exploring.</em></h1><p>These ideas connect with what you told us. See what resonates—and feel free to follow your curiosity.</p></div>
+          <div class="result-toolbar"><div><span id="results-summary">YOUR TOP MATCHES</span><small>Based on the interests and strengths you selected</small></div><div class="toolbar-actions"><button id="share-button" class="text-action">↗ Share</button><button id="download-button" class="text-action">↓ Save summary</button></div></div>
+          <div id="career-results" class="career-results"></div>
+          <div class="results-end"><button class="button button-dark" id="retake-button">Retake the quiz <span>↻</span></button><p>Your answers stay in this browser and aren’t sent anywhere.</p></div>
+          <div class="disclaimer"><span>✦</span><p><b>A starting point, not a verdict.</b> These matches are based on a small set of preferences and a starter career catalogue. Real career choices depend on many things, and your interests can change.</p></div>
+        </div>
+      </section>
+
+      <section id="saved-view" class="view saved-view">
+        <div class="saved-container"><div class="eyebrow"><span class="eyebrow-line"></span> YOUR COLLECTION</div><h1>Careers you’ve<br /><em>saved.</em></h1><p class="saved-intro">Keep the ideas that caught your attention close by.</p><div id="saved-list" class="career-results saved-results"></div><div id="saved-empty" class="empty-state"><span>✳</span><h2>A little space for inspiration.</h2><p>Save careers from your results and they’ll show up here.</p><button class="button button-dark" id="saved-discover">Explore careers <span>↗</span></button></div></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">✳</span><span>northstar<span class="brand-dot">.</span></span></a><span>Curiosity is a good place to begin.</span><span>Student project · Career discovery</span></footer>
+
+    <div id="modal-backdrop" class="modal-backdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close dialog">×</button><div id="modal-content"></div></section></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
